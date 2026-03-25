@@ -4,9 +4,11 @@ version = "0.1.0"
 description = "Learning path for Claude Agent SDK & Pydantic AI"
 requires-python = ">=3.11"
 dependencies = [
+    "anthropic",
     "claude-agent-sdk",
     "pydantic>=2.0",
     "pydantic-ai",
+    "python-dotenv",
     "mcp",
 ]
 
