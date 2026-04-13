@@ -4,3 +4,6 @@
 [submodule "claude-code"]
 	path = claude-code
 	url = git@github.com:Kexin-Wei/claude-code.git
+[submodule "claude-quickstarts"]
+	path = claude-quickstarts
+	url = git@github.com:anthropics/claude-quickstarts.git
