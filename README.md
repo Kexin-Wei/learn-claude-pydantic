@@ -2,15 +2,29 @@
 
 Python 3.11+ | async/await | type hints | `uv sync` to install
 
+## Submodules
+
+| Submodule | Purpose |
+|-----------|---------|
+| [claude-quickstarts](claude-quickstarts/) | Official Anthropic API examples and cookbook |
+| [learn-claude-code](learn-claude-code/) | Reverse-engineer Claude Code internals (agent loop → multi-agent) |
+| [claude-code](claude-code/) | Claude Code source — read-only reference for Steps 0.5–0.6 |
+
 ## The Path
 
 ```
+Phase A — Understand how Claude Code works
+──────────────────────────────────────────────────────────────────────────
+Step -1   claude-quickstarts         Official Anthropic API examples
+   ↓
 Step 0    learn-claude-code          Agent loops, tools, subagents, multi-agent
    ↓
 Step 0.5  Production Patterns        Permission, memory, error recovery, prompt pipeline
    ↓
 Step 0.6  Extensibility              Hooks, plugins, cron scheduling
-   ↓
+
+Phase B — Build your own agents
+──────────────────────────────────────────────────────────────────────────
 Step 1    Pydantic + Structured Out  Type-safe validated responses from Claude
    ↓
 Step 2    Pydantic AI Framework      Agents with DI, typed tools, test harness
@@ -18,11 +32,21 @@ Step 2    Pydantic AI Framework      Agents with DI, typed tools, test harness
 Step 3    MCP                        Connect agents to external services
    ↓
 Step 4    Capstone                   Build a real project combining it all
+
+Phase C — SDK & Provider Comparison  (parallel with A/B)
+──────────────────────────────────────────────────────────────────────────
+Track C1  Claude Agent SDK           Todo, planner, subagents — what's built-in vs DIY?
+Track C2  OpenAI Agents SDK          Agent primitives, tool use, orchestration
+Track C3  GLM (Zhipu AI)             Chinese LLM agent capabilities
 ```
 
 ## Progress
 
-- [ ] **Step 0** — [learn-claude-code](learn-claude-code/) (submodule, prerequisite)
+### Phase A — Understand Claude Code
+
+- [ ] **Step -1** — [claude-quickstarts](claude-quickstarts/) (submodule)
+  - [ ] Study official Anthropic API examples and cookbook patterns
+- [ ] **Step 0** — [learn-claude-code](learn-claude-code/) (submodule)
   - [x] s01 — The Agent Loop: one tool + one `while True` = an agent
     - [x] Read: [docs/en/s01](learn-claude-code/docs/en/s01-the-agent-loop.md)
     - [x] **Code: [`ex01_agent_loop.py`](learn-claude-code/exercises/ex01_agent_loop.py)** — implement `agent_loop()` from scratch
@@ -81,6 +105,8 @@ Step 4    Capstone                   Build a real project combining it all
   - [ ] Cron Scheduler: agent-initiated scheduled tasks for proactive behavior
     - [ ] Read: [`tools/ScheduleCronTool/`](claude-code/src/tools/ScheduleCronTool/) — cron tool
     - [ ] Read: [`hooks/useScheduledTasks.ts`](claude-code/src/hooks/useScheduledTasks.ts) — task scheduling
+### Phase B — Build Your Own Agents
+
 - [ ] **Step 1** — [Pydantic + Structured Outputs](docs/modules/01-pydantic-structured-outputs.md) ~3-4h
   - BaseModel, validators, `model_json_schema()`, enforce typed Claude responses
 - [ ] **Step 2** — [Pydantic AI Framework](docs/modules/02-pydantic-ai.md) ~5-6h
@@ -89,6 +115,26 @@ Step 4    Capstone                   Build a real project combining it all
   - Connect to MCP servers, build your own, integrate with Agent SDK & Pydantic AI
 - [ ] **Step 4** — [Capstone Project](docs/modules/04-capstone.md) ~4-6h
   - Code reviewer, research assistant, data pipeline, or CLI task manager
+
+### Phase C — SDK & Provider Comparison
+
+> Goal: test whether these SDKs/providers give you Claude Code-like capabilities
+> (todo manager, auto subagent spawning, planner mode, etc.) out of the box.
+
+- [ ] **Track C1** — Claude Agent SDK
+  - [ ] Does it provide TodoWrite / task management?
+  - [ ] Does it auto-spawn subagents or require manual orchestration?
+  - [ ] Does it have planner mode / plan-then-execute?
+  - [ ] What's built-in vs what Claude Code adds on top?
+- [ ] **Track C2** — OpenAI Agents SDK
+  - [ ] Agent primitives: how does `Agent`, `Runner`, handoffs compare?
+  - [ ] Tool use model: function calling, code interpreter, file search
+  - [ ] Orchestration: guardrails, tracing, multi-agent patterns
+  - [ ] Does it have built-in planning / task tracking?
+- [ ] **Track C3** — GLM (Zhipu AI)
+  - [ ] Agent capabilities: tool use, multi-turn, code execution
+  - [ ] SDK maturity and ecosystem
+  - [ ] How does it compare for Chinese-language tasks?
 
 > [Quick Reference](docs/QUICKSTART.md) — setup + code snippets for each step
 
