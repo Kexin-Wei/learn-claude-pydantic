@@ -39,21 +39,21 @@
 
 ## Coding Task Test Results
 
-> Task: "Create a Python CLI todo app with add, list, complete, and delete commands.
-> Use a JSON file for storage. Include error handling."
+> Task: "Build a multi-file Python expense tracker CLI (models.py, storage.py, cli.py, test_tracker.py).
+> Commands: add, list (with filters), summary (category totals), delete. JSON persistence. Unit tests."
+>
+> Results saved to `phase-c/results/<target>/` — run `uv run python phase-c/coding_task.py <target>`.
 
 | Metric | Claude Agent SDK | Claude CLI | OpenAI Agents SDK | GLM (Zhipu) |
 |--------|-----------------|------------|-------------------|-------------|
-| Completed? | | | | |
-| Turns used | | | | |
-| Files created | | | | |
-| Code runs? | | | | |
-| Cost | | | | |
-| Duration | | | | |
-| Used TodoWrite? | | | | |
-| Used subagents? | | | | |
-
-_Run the coding task exercises to fill in results._
+| Completed? | Yes (async cleanup error) | Yes | Files only (import bug) | Yes |
+| Turns used | 21 | 22 | 12 | 17 |
+| Expected files (4) | 4/4 | 4/4 | 4/4 | 4/4 |
+| Code runs? | Yes | Yes | No | Yes |
+| Cost | $0.77 | $0.62 | N/A (check dashboard) | $1.55 |
+| Duration | 169s | 134s | 86s | 476s |
+| Used TodoWrite? | Yes | Yes | No (not available) | Yes |
+| Used subagents? | Yes | Yes | No (not available) | Yes |
 
 ## Summary
 
