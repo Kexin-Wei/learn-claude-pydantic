@@ -10,6 +10,9 @@ dependencies = [
     "pydantic-ai",
     "python-dotenv",
     "mcp",
+    "zhipuai>=2.0",
+    "openai",
+    "openai-agents",
 ]
 
 [project.optional-dependencies]
