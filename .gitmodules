@@ -1,12 +1,12 @@
 [submodule "learn-claude-code"]
-	path = phase-a/exercises
+	path = 03-claude-code-deep-dive/exercises
 	url = git@github.com:Kexin-Wei/learn-claude-code.git
 [submodule "claude-code"]
-	path = phase-a/claude-code
+	path = 03-claude-code-deep-dive/claude-code
 	url = git@github.com:Kexin-Wei/claude-code.git
 [submodule "claude-quickstarts"]
-	path = phase-a/quickstarts
+	path = 03-claude-code-deep-dive/quickstarts
 	url = git@github.com:anthropics/claude-quickstarts.git
-[submodule "phase-c"]
-	path = phase-c
+[submodule "ai-sdk-comparison"]
+	path = 01-ai-sdk-comparison
 	url = git@github.com:Kexin-Wei/ai-sdk-comparison.git
